@@ -194,7 +194,6 @@ impl Generator {
     }
 }
 
-#[cfg(feature = "proc-macro2")]
 impl Generator {
     /// Create a new generator with the name `name`. This is useful for testing purposes in combination with the `assert_eq` function.
     pub fn with_name(name: &str) -> Self {

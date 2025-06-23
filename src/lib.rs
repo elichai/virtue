@@ -69,6 +69,9 @@
 //! ```
 #![warn(missing_docs)]
 
+#[cfg(feature = "proc-macro")]
+extern crate proc_macro;
+
 mod error;
 
 pub mod generate;
@@ -87,14 +90,7 @@ pub mod prelude {
         AttributeAccess, Body, EnumVariant, Fields, FromAttribute, Parse, UnnamedField,
     };
     pub use crate::{Error, Result};
-
-    #[cfg(any(test, feature = "proc-macro2"))]
     pub use proc_macro2::*;
-
-    #[cfg(not(any(test, feature = "proc-macro2")))]
-    extern crate proc_macro;
-    #[cfg(not(any(test, feature = "proc-macro2")))]
-    pub use proc_macro::*;
 }
 
 #[cfg(test)]

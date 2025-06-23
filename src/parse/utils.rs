@@ -58,14 +58,8 @@ pub fn consume_punct_if(
     None
 }
 
-#[cfg(any(test, feature = "proc-macro2"))]
 pub fn ident_eq(ident: &Ident, text: &str) -> bool {
     ident == text
-}
-
-#[cfg(not(any(test, feature = "proc-macro2")))]
-pub fn ident_eq(ident: &Ident, text: &str) -> bool {
-    ident.to_string() == text
 }
 
 fn check_if_arrow(tokens: &[TokenTree], punct: &Punct) -> bool {
