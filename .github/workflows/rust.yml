@@ -156,11 +156,11 @@
               },
               {
                 "name": "Upload to codecov.io",
-                "uses": "codecov/codecov-action@v3",
+                "uses": "codecov/codecov-action@v5",
               },
               {
                 "name": "Archive code coverage results",
-                "uses": "actions/upload-artifact@v3",
+                "uses": "actions/upload-artifact@v4",
                 "with":
                   { "name": "code-coverage-report", "path": "cobertura.xml" },
               },
